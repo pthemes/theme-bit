@@ -1,4 +1,8 @@
+// out: ../css/theme.css, compress: true
+
+@import "fonts.less";
 @import "uikit/uikit.less";
+
 
 @icon-font-path: "../../../../../app/assets/uikit/fonts";
 @global-image-path: '../../less/uikit/images';
@@ -15,15 +19,27 @@
 
 html { overflow-y: scroll; }
 
+// @import "variables.less";
 
 /* Navbar
  ========================================================================== */
 
 .tm-navbar {
-    position: relative;
-    background: @navbar-background;
+    position: fixed;
+    right: 0;
+    left: 0;
+    background: @global-dark-color;
     box-shadow: 0px 3px 8px -4px rgba(0,0,0,0.15);
     z-index: 1;
+    text-align: center;
+    align-content: center;
+}
+
+// .uk-navbar-brand {float: right}
+
+.uk-navbar-flip {
+  float: left;
+  padding-left: 30;
 }
 
 /* Navbar as overlay */
@@ -42,13 +58,36 @@ html { overflow-y: scroll; }
 
 .tm-navbar-transparent .uk-navbar { background: none; }
 
+.tm-logo {
+  width: 80px;
+}
+.tm-main {
+// background-color: rgba(0, 255, 0, 0.3);
+// background-opacity: 0.0;
+
+}
+
+
+body {
+  background-color: rgba(0, 255, 0, 0.3);
+   background-image: url("../../../../../storage/logo_bk.svg"); //,url("../../../../../storage/pipki.png");
+ // background-repeat: no-repeat,repeat;
+ // background-position: center center;
+  // background-size: contain, 15% 25%;
+  background-opacity: 0.0;
+
+}
+
+// .av-main {
+//     background-color: rgba(255, 255, 255, 0);
+// }
 /*
  * Contrast color
  */
 
 .tm-logo-contrast { display: none; }
 
-.tm-navbar-contrast {
+// .tm-navbar-contrast {
 
     .uk-navbar { color: @contrast-color; }
 
@@ -68,7 +107,11 @@ html { overflow-y: scroll; }
     .uk-navbar-content > a:not([class]):hover { color: @contrast-color; }
 
     // Brand
-    .uk-navbar-brand { color: fade(@contrast-color, 70%); }
+    .uk-navbar-brand {
+        color: fade(@contrast-color, 70%);
+        position: absolute;
+        display:inline-block;
+    }
 
     .uk-navbar-brand:hover,
     .uk-navbar-brand:focus { color: @contrast-color; }
@@ -85,7 +128,7 @@ html { overflow-y: scroll; }
     .tm-logo { display: none; }
     .tm-logo-contrast { display: inline-block; }
 
-}
+// }
 
 
 /* Blocks
@@ -105,6 +148,7 @@ html { overflow-y: scroll; }
     .tm-footer {
         padding-top: 60px;
         padding-bottom: 60px;
+        background-color: @global-dark-color;
     }
 
 }
@@ -117,3 +161,45 @@ html { overflow-y: scroll; }
     max-width: 800px;
     margin: auto;
 }
+/* ჩემი
+============================================================ */
+.av-navbar-nav {
+    margin: 0;
+    padding: 0;
+    float: right;
+    list-style: none;
+
+}
+.uk-h5,.uk-h6,
+.uk-navbar-nav>li>a , .uk-h1,.uk-h2,.uk-h3,.uk-h4,
+
+
+.uk-article-title,  .uk-h1, .uk-button-large, .uk-heading-large,
+.uk-panel-title, h4 {
+
+			font-family: "BPG Mrgvlovani Caps","Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+a.uk-icon-hover.uk-icon-small {
+    font-family: FontAwesome;
+    font-size: 22px;
+
+
+}
+
+ul.uk-grid.uk-grid-medium.uk-navbar-nav {
+    margin-right: 30px;
+}
+
+a>.uk-h6 {
+    margin: 0;
+    padding: 0;
+}
+
+.uk-navbar-brand {
+    color: fade(@contrast-color, 70%);
+    position: absolute;
+    display:inline-block;
+}
+
+ @import "av.less";
