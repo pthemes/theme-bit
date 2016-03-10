@@ -1,15 +1,15 @@
 {
-    "name": "pagekit/theme-one",
+    "name": "pagekit/theme-bit",
     "type": "pagekit-theme",
-    "version": "0.10.1",
-    "title": "One",
+    "version": "0.0.1",
+    "title": "bitaani",
     "description": "Pagekit's default theme.",
     "license": "MIT",
     "authors": [
         {
-            "name": "Pagekit",
-            "email": "info@pagekit.com",
-            "homepage": "http://pagekit.com"
+            "name": "Avtandil Pangani",
+            "email": "avto@telaveli.ge",
+            "homepage": "http://avto.akhmeta.ge"
         }
     ],
     "extra": {

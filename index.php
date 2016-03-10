@@ -2,7 +2,7 @@
 
 return [
 
-    'name' => 'theme-one',
+    'name' => 'theme-bit',
 
     /**
      * Menu positions
@@ -42,11 +42,7 @@ return [
         'hero_image' => '',
         'hero_viewport' => '',
         'hero_contrast' => '',
-        'hero_parallax' => '',
-        'navbar_transparent' => '',
-        'top_style' => 'uk-block-muted',
-        'main_style' => 'uk-block-default',
-        'bottom_style' => 'uk-block-muted'
+        'navbar_transparent' => ''
 
     ],
 
@@ -73,8 +69,7 @@ return [
      */
     'config' => [
 
-        'logo_contrast' => '',
-        'logo_offcanvas' => ''
+        'logo_contrast' => ''
 
     ],
 
@@ -82,8 +77,12 @@ return [
      * Events
      */
     'events' => [
+        'view.scripts' => function ($event, $scripts) use ($app) {
+            $scripts->register('mail', 'theme:app/bundle/mail.js', 'vue');
+        },
 
         'view.system/site/admin/settings' => function ($event, $view) use ($app) {
+
             $view->script('site-theme', 'theme:app/bundle/site-theme.js', 'site-settings');
             $view->data('$theme', $this);
         },
@@ -107,8 +106,7 @@ return [
 
             $classes = [
                 'navbar' => 'tm-navbar',
-                'hero' => '',
-                'parallax' => ''
+                'hero' => ''
             ];
 
             $sticky = [
@@ -142,10 +140,6 @@ return [
                     $sticky['clsinactive'] = 'tm-navbar-transparent';
                 }
 
-            }
-
-            if ($event['hero_parallax'] && $view->position()->exists('hero') && $event['hero_image']) {
-                $classes['parallax'] = 'data-uk-parallax="{bg: \'-400\'}"';
             }
 
             if ($event['hero_contrast'] && $event['hero_image']) {

@@ -14,7 +14,7 @@
 @table-caption-color:                           @global-muted-color;
 @table-caption-font-size:                       round((@global-font-size * 0.85)); // 12px / 14px
 
-@table-striped-background:                      #fafafa;
+@table-striped-background:                      #c9e5ab;
 
 @table-condensed-padding-vertical:              10px;
 @table-condensed-padding-horizontal:            12px;
@@ -35,7 +35,14 @@
 
 .hook-table-active() {}
 
-.hook-table-striped() {}
+.hook-table-striped() {
+
+    tbody tr:nth-of-type(odd) {
+        background: #c9e5ab;
+
+
+    }
+}
 
 .hook-table-condensed() {}
 
